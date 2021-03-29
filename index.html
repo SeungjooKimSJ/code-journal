@@ -31,7 +31,40 @@
     </div>
 
     <form class="form-new-entry" data-view="entry-form">
+      <div id="placeholder-image">
+        <img src="./images/placeholder-image-square.jpg" alt="placeholder-image">
+      </div>
 
+      <div class="entry-info" data-view="entry-form">
+        <div class="title">
+          <label for="entry-title">Title</label>
+          <div class="input-area">
+            <input type="text" name="title" id="entry-title" required>
+          </div>
+        </div>
+
+        <div class="photo-url">
+          <label for="entry-url">Photo URL</label>
+          <div class="input-area">
+            <input type="text" name="photo-url" id="entry-url" required>
+          </div>
+        </div>
+
+        <div class="notes">
+          <label for="entry-notes">Notes</label>
+          <div class="text-content">
+            <textarea name="notes" id="entry-notes"
+            cols="30" rows="10" required></textarea>
+          </div>
+
+          <div class="entry-btn">
+            <button type="submit" class="entry-save-btn">
+              Save
+            </button>
+          </div>
+        </div>
+
+      </div>
     </form>
   </main>
 
