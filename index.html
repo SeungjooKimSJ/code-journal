@@ -18,7 +18,7 @@
 <body>
   <header>
     <a href="./index.html" class="logo">
-      <h2>Code Journal</h2>
+      <h2 class="header-h2">Code Journal</h2>
     </a>
     <div class="header" data-view="entry-form">
 
@@ -31,8 +31,9 @@
     </div>
 
     <form class="form-new-entry" data-view="entry-form">
-      <div id="placeholder-image">
-        <img src="./images/placeholder-image-square.jpg" alt="placeholder-image">
+      <div id="placeholder-image-area">
+        <img src="./images/placeholder-image-square.jpg"
+        alt="placeholder-image" id="placeholder-image">
       </div>
 
       <div class="entry-info" data-view="entry-form">
@@ -52,7 +53,7 @@
 
         <div class="notes">
           <label for="entry-notes">Notes</label>
-          <div class="text-content">
+          <div class="text-area">
             <textarea name="notes" id="entry-notes"
             cols="30" rows="10" required></textarea>
           </div>
