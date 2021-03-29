@@ -28,7 +28,7 @@ main {
 #placeholder-image {
   object-fit: cover;
   width: 88%;
-  max-height: 350px;
+  max-height: 400px;
   margin-bottom: 1.5rem;
 }
 
