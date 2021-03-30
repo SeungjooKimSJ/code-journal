@@ -20,53 +20,51 @@
     <a href="./index.html" class="logo">
       <h2 class="header-h2">Code Journal</h2>
     </a>
-    <div class="header" data-view="entry-form">
-
-    </div>
+    <div class="header"></div>
   </header>
 
   <main>
-    <div class="main-header" data-view="entry-form">
+    <div class="main-container" data-view="entry-form">
       <h1 class="main-h1">New Entry</h1>
+
+      <form class="form-new-entry">
+        <div id="placeholder-image-area">
+          <img src="./images/placeholder-image-square.jpg"
+          alt="placeholder-img" id="placeholder-image">
+        </div>
+
+        <div class="entry-title-and-url">
+          <div class="title">
+            <label for="entry-title">Title</label>
+            <div class="input-area">
+              <input type="text" name="title" id="entry-title" required>
+            </div>
+          </div>
+
+          <div class="url">
+            <label for="entry-url">Photo URL</label>
+            <div class="input-area">
+              <input type="url" name="url" id="entry-url" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="entry-notes">
+          <label for="entry-notes">Notes</label>
+          <div class="text-area">
+            <textarea name="notes" id="entry-notes"
+            cols="30" rows="10" required></textarea>
+          </div>
+
+          <div class="entry-btn">
+            <button type="submit" class="entry-save-btn">
+              Save
+            </button>
+          </div>
+        </div>
+      </form>
+
     </div>
-
-    <form class="form-new-entry" data-view="entry-form">
-      <div id="placeholder-image-area">
-        <img src="./images/placeholder-image-square.jpg"
-        alt="placeholder-img" id="placeholder-image">
-      </div>
-
-      <div class="entry-title-and-url" data-view="entry-form">
-        <div class="title">
-          <label for="entry-title">Title</label>
-          <div class="input-area">
-            <input type="text" name="title" id="entry-title" required>
-          </div>
-        </div>
-
-        <div class="url">
-          <label for="entry-url">Photo URL</label>
-          <div class="input-area">
-            <input type="url" name="url" id="entry-url" required>
-          </div>
-        </div>
-      </div>
-
-      <div class="entry-notes">
-        <label for="entry-notes">Notes</label>
-        <div class="text-area">
-          <textarea name="notes" id="entry-notes"
-          cols="30" rows="10" required></textarea>
-        </div>
-
-        <div class="entry-btn">
-          <button type="submit" class="entry-save-btn">
-            Save
-          </button>
-        </div>
-      </div>
-    </form>
-
   </main>
 
   <script src="js/data.js"></script>
