@@ -100,10 +100,10 @@ label {
   }
 
   #placeholder-image-area {
-    width: 50%;
     padding-right: 2rem;
   }
 
+  #placeholder-image-area,
   .entry-title-and-url {
     width: 50%;
   }
