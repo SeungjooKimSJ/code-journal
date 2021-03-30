@@ -13,10 +13,6 @@ function imgInputHandler(event) {
   $placeholderImage.setAttribute('src', event.target.value);
 }
 
-// var $formNewEntry = document.querySelector('.form-new-entry');
-
-// $formNewEntry.addEventListener('submit', submitNewEntryForm);
-
 function submitNewEntryForm(event) {
   event.preventDefault();
 

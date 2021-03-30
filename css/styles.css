@@ -1,3 +1,7 @@
+body {
+  background-color: #edebed;
+}
+
 header {
   background-color: #4a2373;
   display: flex;
@@ -5,7 +9,7 @@ header {
 
 .logo {
   text-decoration: none;
-  padding-left: 3.5rem;
+  padding-left: 2rem;
 }
 
 .header-h2 {
@@ -13,31 +17,27 @@ header {
 }
 
 main {
-  background-color: #edebed;
-  padding-left: 3.5rem;
+  padding: 0 2rem;
 }
 
 .main-header {
   display: flex;
 }
 
-.form-new-entry {
+.form-new-entry,
+#placeholder-image-area {
   width: 100%;
 }
 
 #placeholder-image {
   object-fit: cover;
-  width: 88%;
+  width: 100%;
   max-height: 400px;
   margin-bottom: 1.5rem;
 }
 
 label {
   font-weight: 600;
-}
-
-.entry-info {
-  width: 88%;
 }
 
 .input-area,
@@ -88,28 +88,23 @@ label {
   outline: none;
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 800px) {
   .form-new-entry {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
   }
 
-  /* .entry-info {
-    display: flex;
-    flex-wrap: wrap;
-  } */
-
-  #placeholder-image,
-  .title,
-  .url {
+  #placeholder-image-area {
     width: 50%;
-
-    /* margin-right: 2rem; */
+    padding-right: 2rem;
   }
 
-  /* #placeholder-image,
-  #entry-title,
-  #entry-url {
+  .entry-title-and-url {
     width: 50%;
-  } */
+  }
+
+  .entry-notes {
+    width: 100%;
+  }
 }
