@@ -87,3 +87,29 @@ label {
 .entry-save-btn:focus {
   outline: none;
 }
+
+@media screen and (min-width: 1025px) {
+  .form-new-entry {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* .entry-info {
+    display: flex;
+    flex-wrap: wrap;
+  } */
+
+  #placeholder-image,
+  .title,
+  .url {
+    width: 50%;
+
+    /* margin-right: 2rem; */
+  }
+
+  /* #placeholder-image,
+  #entry-title,
+  #entry-url {
+    width: 50%;
+  } */
+}
