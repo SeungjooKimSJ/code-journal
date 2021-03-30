@@ -25,16 +25,17 @@ main {
   flex-wrap: wrap;
 }
 
-.form-new-entry,
-#placeholder-image-area {
-  width: 100%;
-}
-
 #placeholder-image {
   object-fit: cover;
   width: 100%;
   max-height: 400px;
   margin-bottom: 1.5rem;
+}
+
+.title,
+.url,
+.notes {
+  width: 100%;
 }
 
 label {
@@ -94,22 +95,22 @@ label {
 }
 
 @media screen and (min-width: 769px) {
-  .form-new-entry {
+  .form-row {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
   }
 
-  #placeholder-image-area {
+  .column-image {
     padding-right: 2rem;
   }
 
-  #placeholder-image-area,
-  .entry-title-and-url {
+  .column-image,
+  .column {
     width: 50%;
   }
 
-  .entry-notes {
+  .main-container .column:last-child {
     width: 100%;
   }
 }

@@ -4,7 +4,7 @@
 var $placeholderImage = document.querySelector('#placeholder-image');
 var $photoUrl = document.querySelector('.url');
 
-var $formNewEntry = document.querySelector('.form-new-entry');
+var $formNewEntry = document.querySelector('.form-row');
 
 $photoUrl.addEventListener('input', imgInputHandler);
 $formNewEntry.addEventListener('submit', submitNewEntryForm);
