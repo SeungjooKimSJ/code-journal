@@ -188,6 +188,10 @@ label {
     width: 50%;
   }
 
+  .column-dom {
+    overflow: auto;
+  }
+
   .main-container .column:last-child {
     width: 100%;
   }
