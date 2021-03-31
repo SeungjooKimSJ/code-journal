@@ -33,3 +33,12 @@ function submitNewEntryForm(event) {
 
   $formNewEntry.reset();
 }
+
+var $liNav = document.querySelector('.li-nav');
+var $mainContainer = document.querySelector('.main-container');
+
+$liNav.addEventListener('click', clickNavEntries);
+
+function clickNavEntries(event) {
+  $mainContainer.classList = 'main-container hidden';
+}
