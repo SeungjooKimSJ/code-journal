@@ -46,3 +46,23 @@ function clickNavEntries(event) {
   $entriesContainer.className = 'entries-container';
 
 }
+
+function renderEntry(entry) {
+  var $divDom = document.createElement('div');
+
+  var $imgDom = document.createElement('img');
+  $imgDom.setAttribute('src', entry.url);
+  $imgDom.setAttribute('class', 'image-dom');
+
+  var $h2Dom = document.createElement('h2');
+  $h2Dom.setAttribute('class', 'h2-dom');
+  $h2Dom.textContent = entry.title;
+
+  var $pDom = document.createElement('p');
+  $pDom.setAttribute('class', 'p-dom');
+  $pDom.textContent = entry.notes;
+
+  $divDom.append ($imgDom, $h2Dom, $pDom);
+
+  return $divDom;
+}
