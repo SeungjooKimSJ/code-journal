@@ -23,7 +23,7 @@
     <div class="header">
       <ul class="ul-nav" data-view="entries">
         <li class="li-nav">
-          <a href="#">Entries</a>
+          <a href="#" class="nav-entries">Entries</a>
         </li>
       </ul>
     </div>
@@ -71,8 +71,20 @@
           </div>
         </div>
       </form>
-
     </div>
+
+    <div class="entries-container hidden" data-view="entries">
+      <div class="entries-header">
+        <h1 class="entries-h1">Entries</h1>
+        <button class="entries-new-btn">New</button>
+      </div>
+      <div class="entries-div">
+        <p class="entries-p">
+          No entries have been recorded.
+        </p>
+      </div>
+    </div>
+
   </main>
 
   <script src="js/data.js"></script>

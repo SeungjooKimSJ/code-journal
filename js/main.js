@@ -34,11 +34,15 @@ function submitNewEntryForm(event) {
   $formNewEntry.reset();
 }
 
-var $liNav = document.querySelector('.li-nav');
+var $navEntries = document.querySelector('.nav-entries');
 var $mainContainer = document.querySelector('.main-container');
+var $entriesContainer = document.querySelector('.entries-container');
 
-$liNav.addEventListener('click', clickNavEntries);
+$navEntries.addEventListener('click', clickNavEntries);
 
 function clickNavEntries(event) {
-  $mainContainer.classList = 'main-container hidden';
+  $mainContainer.className = 'main-container hidden';
+
+  $entriesContainer.className = 'entries-container';
+
 }
