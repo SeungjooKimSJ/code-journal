@@ -8,12 +8,17 @@ header {
 }
 
 .logo {
-  text-decoration: none;
   padding-left: 2rem;
 }
 
-.header-h2 {
+a {
+  text-decoration: none;
   color: #fff;
+}
+
+.ul-nav {
+  list-style: none;
+  padding-top: 0.75rem;
 }
 
 main {
