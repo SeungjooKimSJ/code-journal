@@ -11,11 +11,12 @@ var $entriesContainer = document.querySelector('.entries-container');
 var $entriesP = document.querySelector('.entries-p');
 var $entriesUl = document.querySelector('.entries-ul');
 var $entriesLi = document.querySelector('.entries-li');
+var $entriesNewBtn = document.querySelector('.entries-new-btn');
 
 $photoUrl.addEventListener('input', imgInputHandler);
 $formNewEntry.addEventListener('submit', submitNewEntryForm);
-
 $navEntries.addEventListener('click', clickNavEntries);
+$entriesNewBtn.addEventListener('click', clickEntriesNewBtn);
 
 function imgInputHandler(event) {
   $placeholderImage.setAttribute('src', event.target.value);
@@ -83,4 +84,10 @@ function renderEntry(entry) {
   $divRow.append($columnImgDom, $columnDom);
 
   return $divRow;
+}
+
+function clickEntriesNewBtn(event) {
+  $mainContainer.className = 'main-container';
+
+  $entriesContainer.className = 'entries-container hidden';
 }
