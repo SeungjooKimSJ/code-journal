@@ -14,11 +14,61 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <header>
+    <a href="./index.html" class="logo">
+      <h2 class="header-h2">Code Journal</h2>
+    </a>
+    <div class="header"></div>
   </header>
+
   <main>
+    <div class="main-container" data-view="entry-form">
+      <h1 class="main-h1">New Entry</h1>
+
+      <form class="form-row">
+        <div class="column-image">
+          <img src="./images/placeholder-image-square.jpg"
+          alt="placeholder-img" id="placeholder-image">
+        </div>
+
+        <div class="column">
+          <div class="title">
+            <label for="entry-title">Title</label>
+            <div class="input-area">
+              <input type="text" name="title" id="entry-title" required>
+            </div>
+          </div>
+
+          <div class="url">
+            <label for="entry-url">Photo URL</label>
+            <div class="input-area">
+              <input type="url" name="url" id="entry-url" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="notes">
+            <label for="entry-notes">Notes</label>
+            <div class="text-area">
+              <textarea name="notes" id="entry-notes"
+              cols="30" rows="10" required></textarea>
+            </div>
+
+            <div class="entry-btn">
+              <button type="submit" class="entry-save-btn">
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
   </main>
+
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
