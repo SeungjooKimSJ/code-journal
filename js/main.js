@@ -57,11 +57,18 @@ function clickNavEntries(event) {
 }
 
 function renderEntry(entry) {
-  var $divDom = document.createElement('div');
+  var $divRow = document.createElement('div');
+  $divRow.setAttribute('class', 'div-row');
+
+  var $columnImgDom = document.createElement('div');
+  $columnImgDom.setAttribute('class', 'column-image-dom');
 
   var $imgDom = document.createElement('img');
   $imgDom.setAttribute('src', entry.url);
   $imgDom.setAttribute('class', 'image-dom');
+
+  var $columnDom = document.createElement('div');
+  $columnDom.setAttribute('class', 'column-dom');
 
   var $h2Dom = document.createElement('h2');
   $h2Dom.setAttribute('class', 'h2-dom');
@@ -71,7 +78,9 @@ function renderEntry(entry) {
   $pDom.setAttribute('class', 'p-dom');
   $pDom.textContent = entry.notes;
 
-  $divDom.append($imgDom, $h2Dom, $pDom);
+  $columnImgDom.appendChild($imgDom);
+  $columnDom.append($h2Dom, $pDom);
+  $divRow.append($columnImgDom, $columnDom);
 
-  return $divDom;
+  return $divRow;
 }

@@ -49,6 +49,7 @@ main {
   width: 100%;
   max-height: 400px;
   margin-bottom: 1.5rem;
+  border-radius: 5px;
 }
 
 .title,
@@ -120,6 +121,22 @@ label {
   margin-top: 3rem;
 }
 
+.entries-ul {
+  list-style: none;
+  padding: 0;
+}
+
+.image-dom {
+  object-fit: cover;
+  width: 100%;
+  max-height: 400px;
+  border-radius: 5px;
+}
+
+.p-dom {
+  margin-bottom: 3rem;
+}
+
 .entries-new-btn {
   padding: 0.5rem 1rem;
   background-color: #4a2373;
@@ -148,18 +165,26 @@ label {
 }
 
 @media screen and (min-width: 769px) {
-  .form-row {
+  .form-row,
+  .div-row {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
   }
 
-  .column-image {
+  .div-row {
+    margin-bottom: 3rem;
+  }
+
+  .column-image,
+  .column-image-dom {
     padding-right: 2rem;
   }
 
   .column-image,
-  .column {
+  .column,
+  .column-image-dom,
+  .column-dom {
     width: 50%;
   }
 
