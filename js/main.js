@@ -17,8 +17,8 @@ $photoUrl.addEventListener('input', imgInputHandler);
 $formNewEntry.addEventListener('submit', submitNewEntryForm);
 // $navEntries.addEventListener('click', clickNavEntries);
 // $entriesNewBtn.addEventListener('click', clickEntriesNewBtn);
-$navEntries.addEventListener('click', clickBtnHandler);
-$entriesNewBtn.addEventListener('click', clickBtnHandler);
+$navEntries.addEventListener('click', clickNavAndBtnHandler);
+$entriesNewBtn.addEventListener('click', clickNavAndBtnHandler);
 
 function imgInputHandler(event) {
   $placeholderImage.setAttribute('src', event.target.value);
@@ -44,20 +44,6 @@ function submitNewEntryForm(event) {
 
   $formNewEntry.reset();
 }
-
-// function clickNavEntries(event) {
-//   $mainContainer.className = 'main-container hidden';
-//   $entriesP.className = 'entries-p hidden';
-
-//   $entriesContainer.className = 'entries-container';
-//   $entriesUl.className = 'entries-ul';
-
-//   for (var i = 0; i < data.entries.length; i++) {
-//     var entryDom = renderEntry(data.entries[i]);
-
-//     $entriesLi.appendChild(entryDom);
-//   }
-// }
 
 function renderEntry(entry) {
   var $divRow = document.createElement('div');
@@ -88,20 +74,16 @@ function renderEntry(entry) {
   return $divRow;
 }
 
-// function clickEntriesNewBtn(event) {
-//   $mainContainer.className = 'main-container';
+function clickNavAndBtnHandler(event) {
+  var $dataView = event.target.getAttribute('data-view');
 
-//   $entriesContainer.className = 'entries-container hidden';
-// }
-
-function clickBtnHandler(entries) {
-  if (data.view !== entries) {
+  if ($dataView === 'entries') {
     $mainContainer.className = 'main-container hidden';
     $entriesP.className = 'entries-p hidden';
 
     $entriesContainer.className = 'entries-container';
     $entriesUl.className = 'entries-ul';
-  } else {
+  } else if ($dataView === 'entry-form') {
     $mainContainer.className = 'main-container';
 
     $entriesContainer.className = 'entries-container hidden';
