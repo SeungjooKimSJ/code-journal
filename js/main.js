@@ -15,8 +15,6 @@ var $entriesNewBtn = document.querySelector('.entries-new-btn');
 
 $photoUrl.addEventListener('input', imgInputHandler);
 $formNewEntry.addEventListener('submit', submitNewEntryForm);
-// $navEntries.addEventListener('click', clickNavEntries);
-// $entriesNewBtn.addEventListener('click', clickEntriesNewBtn);
 $navEntries.addEventListener('click', clickNavAndBtnHandler);
 $entriesNewBtn.addEventListener('click', clickNavAndBtnHandler);
 
@@ -75,15 +73,15 @@ function renderEntry(entry) {
 }
 
 function clickNavAndBtnHandler(event) {
-  var $dataView = event.target.getAttribute('data-view');
+  var dataView = event.target.getAttribute('data-view');
 
-  if ($dataView === 'entries') {
+  if (dataView === 'entries') {
     $mainContainer.className = 'main-container hidden';
     $entriesP.className = 'entries-p hidden';
 
     $entriesContainer.className = 'entries-container';
     $entriesUl.className = 'entries-ul';
-  } else if ($dataView === 'entry-form') {
+  } else if (dataView === 'entry-form') {
     $mainContainer.className = 'main-container';
 
     $entriesContainer.className = 'entries-container hidden';
@@ -95,5 +93,19 @@ window.addEventListener('DOMContentLoaded', function (event) {
     var entryDom = renderEntry(data.entries[i]);
 
     $entriesLi.appendChild(entryDom);
+  }
+
+  var view = data.view;
+
+  if (view === 'entries') {
+    $mainContainer.className = 'main-container hidden';
+    $entriesP.className = 'entries-p hidden';
+
+    $entriesContainer.className = 'entries-container';
+    $entriesUl.className = 'entries-ul';
+  } else if (view === 'entry-form') {
+    $mainContainer.className = 'main-container';
+
+    $entriesContainer.className = 'entries-container hidden';
   }
 });
