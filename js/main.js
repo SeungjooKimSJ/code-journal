@@ -41,6 +41,16 @@ function submitNewEntryForm(event) {
   $placeholderImage.setAttribute('src', './images/placeholder-image-square.jpg');
 
   $formNewEntry.reset();
+
+  $mainContainer.className = 'main-container hidden';
+  $entriesP.className = 'entries-p hidden';
+
+  $entriesContainer.className = 'entries-container';
+  $entriesUl.className = 'entries-ul';
+
+  data.view = 'entries';
+
+  location.reload();
 }
 
 function renderEntry(entry) {
