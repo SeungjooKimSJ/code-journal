@@ -15,6 +15,7 @@ var $entriesNewBtn = document.querySelector('.entries-new-btn');
 
 $photoUrl.addEventListener('input', imgInputHandler);
 $formNewEntry.addEventListener('submit', submitNewEntryForm);
+
 $navEntries.addEventListener('click', clickNavAndBtnHandler);
 $entriesNewBtn.addEventListener('click', clickNavAndBtnHandler);
 
