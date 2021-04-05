@@ -81,10 +81,14 @@ function clickNavAndBtnHandler(event) {
 
     $entriesContainer.className = 'entries-container';
     $entriesUl.className = 'entries-ul';
+
+    data.view = 'entries';
   } else if (dataView === 'entry-form') {
     $mainContainer.className = 'main-container';
 
     $entriesContainer.className = 'entries-container hidden';
+
+    data.view = 'entry-form';
   }
 }
 
