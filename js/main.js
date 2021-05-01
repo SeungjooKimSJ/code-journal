@@ -41,17 +41,19 @@ function submitNewEntryForm(event) {
 
   $placeholderImage.setAttribute('src', './images/placeholder-image-square.jpg');
 
-  $formNewEntry.reset();
-
   $mainContainer.className = 'main-container hidden';
   $entriesP.className = 'entries-p hidden';
 
   $entriesContainer.className = 'entries-container';
   $entriesUl.className = 'entries-ul';
 
+  $entriesLi.textContent = '';
+
+  // var renderEntryPage = renderEntry(entry);
+
   data.view = 'entries';
 
-  location.reload();
+  $formNewEntry.reset();
 }
 
 function renderEntry(entry) {
