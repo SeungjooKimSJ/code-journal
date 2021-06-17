@@ -20,7 +20,15 @@
     <a href="./index.html" class="logo">
       <h2 class="header-h2">Code Journal</h2>
     </a>
-    <div class="header"></div>
+    <div class="header">
+      <ul class="ul-nav">
+        <li class="li-nav">
+          <a href="#" class="nav-entries" data-view="entries">
+            Entries
+          </a>
+        </li>
+      </ul>
+    </div>
   </header>
 
   <main>
@@ -65,8 +73,25 @@
           </div>
         </div>
       </form>
-
     </div>
+
+    <div class="entries-container hidden" data-view="entries">
+      <div class="entries-header">
+        <h1 class="entries-h1">Entries</h1>
+        <button class="entries-new-btn" data-view="entry-form">
+          New
+        </button>
+      </div>
+      <div class="entries-div">
+        <p class="entries-p">
+          No entries have been recorded.
+        </p>
+        <ul class="entries-ul hidden">
+          <li class="entries-li"></li>
+        </ul>
+      </div>
+    </div>
+
   </main>
 
   <script src="js/data.js"></script>

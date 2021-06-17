@@ -8,12 +8,31 @@ header {
 }
 
 .logo {
-  text-decoration: none;
   padding-left: 2rem;
 }
 
-.header-h2 {
+a {
+  text-decoration: none;
   color: #fff;
+}
+
+.ul-nav {
+  list-style: none;
+  padding-top: 0.75rem;
+}
+
+.logo,
+.nav-entries {
+  transition: color 0.7s ease-in-out;
+}
+
+.logo:hover,
+.nav-entries:hover {
+  color: #f3f716;
+}
+
+.logo:active {
+  transform: translateY(0.25rem);
 }
 
 main {
@@ -30,6 +49,7 @@ main {
   width: 100%;
   max-height: 400px;
   margin-bottom: 1.5rem;
+  border-radius: 5px;
 }
 
 .title,
@@ -82,32 +102,94 @@ label {
   transition: background-color 0.7s ease-in-out;
 }
 
-.entry-save-btn:hover {
+.hidden {
+  display: none;
+}
+
+.entries-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.entries-div {
+  display: flex;
+  justify-content: center;
+}
+
+.entries-p {
+  margin-top: 3rem;
+}
+
+.entries-ul {
+  list-style: none;
+  padding: 0;
+}
+
+.image-dom {
+  object-fit: cover;
+  width: 100%;
+  max-height: 400px;
+  border-radius: 5px;
+}
+
+.p-dom {
+  margin-bottom: 3rem;
+}
+
+.entries-new-btn {
+  padding: 0.5rem 1rem;
+  background-color: #4a2373;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.7s ease-in-out;
+}
+
+.entry-save-btn:hover,
+.entries-new-btn:hover {
   background-color: #844ac2;
 }
 
-.entry-save-btn:focus {
+.entry-save-btn:focus,
+.entries-new-btn:focus {
   outline: none;
 }
 
-.entry-save-btn:active {
+.entry-save-btn:active,
+.entries-new-btn:active {
   transform: translateY(0.25rem);
 }
 
 @media screen and (min-width: 769px) {
-  .form-row {
+  .form-row,
+  .div-row {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
   }
 
-  .column-image {
+  .div-row {
+    margin-bottom: 3rem;
+  }
+
+  .column-image,
+  .column-image-dom {
     padding-right: 2rem;
   }
 
   .column-image,
-  .column {
+  .column,
+  .column-image-dom,
+  .column-dom {
     width: 50%;
+  }
+
+  .column-dom {
+    overflow: auto;
   }
 
   .main-container .column:last-child {
