@@ -47,9 +47,7 @@ function submitNewEntryForm(event) {
   $entriesContainer.className = 'entries-container';
   $entriesUl.className = 'entries-ul';
 
-  $entriesLi.textContent = '';
-
-  // var renderEntryPage = renderEntry(entry);
+  $entriesLi.prepend(renderEntry(newEntryData));
 
   data.view = 'entries';
 
