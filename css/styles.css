@@ -133,6 +133,22 @@ label {
   border-radius: 5px;
 }
 
+.h2-and-icon-dom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fas.fa-pen {
+  color: #4a2373;
+  transition: color 0.7s ease-in-out;
+  cursor: pointer;
+}
+
+.fas.fa-pen:hover {
+  color: #844ac2;
+}
+
 .p-dom {
   margin-bottom: 3rem;
 }

@@ -68,16 +68,23 @@ function renderEntry(entry) {
   var $columnDom = document.createElement('div');
   $columnDom.setAttribute('class', 'column-dom');
 
+  var $h2AndIconDom = document.createElement('div');
+  $h2AndIconDom.setAttribute('class', 'h2-and-icon-dom');
+
   var $h2Dom = document.createElement('h2');
   $h2Dom.setAttribute('class', 'h2-dom');
   $h2Dom.textContent = entry.title;
+
+  var $editIconDom = document.createElement('i');
+  $editIconDom.setAttribute('class', 'fas fa-pen');
 
   var $pDom = document.createElement('p');
   $pDom.setAttribute('class', 'p-dom');
   $pDom.textContent = entry.notes;
 
   $columnImgDom.appendChild($imgDom);
-  $columnDom.append($h2Dom, $pDom);
+  $columnDom.append($h2AndIconDom, $pDom);
+  $h2AndIconDom.append($h2Dom, $editIconDom);
   $divRow.append($columnImgDom, $columnDom);
 
   return $divRow;
