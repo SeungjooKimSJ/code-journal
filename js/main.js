@@ -18,6 +18,7 @@ $formNewEntry.addEventListener('submit', submitNewEntryForm);
 
 $navEntries.addEventListener('click', clickNavAndBtnHandler);
 $entriesNewBtn.addEventListener('click', clickNavAndBtnHandler);
+$entriesLi.addEventListener('click', editEntry);
 
 function imgInputHandler(event) {
   $placeholderImage.setAttribute('src', event.target.value);
@@ -131,3 +132,26 @@ window.addEventListener('DOMContentLoaded', function (event) {
     $entriesContainer.className = 'entries-container hidden';
   }
 });
+
+function editEntry(event) {
+  if (event.target.matches('i')) {
+    var entryLiElement = event.target.closest('li');
+    data.editing = entryLiElement;
+
+    var entryId = parseInt(entryLiElement.getAttribute('data-entry-id'));
+
+    for (var i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].nextEntryId === entryId) {
+        var currentEntry = data.entries[i];
+
+        return currentEntry;
+      }
+    }
+    clickNavAndBtnHandler();
+    $formNewEntry.elements.title.value = data.editing.title;
+    $formNewEntry.elements.url.value = data.editing.url;
+    $placeholderImage.setAttribute('src', data.editing.event.target.value);
+    $formNewEntry.elements.notes.value = data.editing.notes;
+  }
+
+}
