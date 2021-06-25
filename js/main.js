@@ -14,7 +14,7 @@ var $mainContainer = document.querySelector('.main-container');
 var $entriesContainer = document.querySelector('.entries-container');
 var $entriesP = document.querySelector('.entries-p');
 var $entriesUl = document.querySelector('.entries-ul');
-var $entriesLi = document.querySelector('.entries-li');
+// var $entriesLi = document.querySelector('.entries-li');
 var $entriesNewBtn = document.querySelector('.entries-new-btn');
 
 $entryUrl.addEventListener('input', imgInputHandler);
@@ -25,10 +25,27 @@ $formNewEntry.addEventListener('submit', submitFormHandler);
 // $entriesNewBtn.addEventListener('click', clickNavAndBtnHandler);
 $navEntries.addEventListener('click', viewEntries);
 $entriesNewBtn.addEventListener('click', viewEntryForm);
-$entriesLi.addEventListener('click', editEntry);
+$entriesUl.addEventListener('click', editEntry);
+
+var view = data.view;
+
+if (view === 'entries') {
+  // $mainContainer.className = 'main-container hidden';
+  // $entriesP.className = 'entries-p hidden';
+
+  // $entriesContainer.className = 'entries-container';
+  // $entriesUl.className = 'entries-ul';
+  viewEntries();
+} else if (view === 'entry-form') {
+  // $mainContainer.className = 'main-container';
+
+  // $entriesContainer.className = 'entries-container hidden';
+  viewEntryForm();
+}
 
 // function imgInputHandler(event) {
-//   $placeholderImage.setAttribute('src', event.target.value);
+//   var photoUrl = event.target.value;
+//   $placeholderImage.setAttribute('src', photoUrl);
 // }
 
 function imgInputHandler(event) {
@@ -84,7 +101,8 @@ function submitFormHandler(event) {
   var renderIt = renderEntry(entryObj);
 
   if (data.editing === null) {
-    $entriesLi.prepend(renderIt);
+    // $entriesLi.prepend(renderIt);
+    $entriesUl.prepend(renderIt);
     data.entries.unshift(entryObj);
     data.nextEntryId++;
   } else {
@@ -95,6 +113,9 @@ function submitFormHandler(event) {
 }
 
 function renderEntry(entry) {
+  var $entryList = document.createElement('li');
+  $entryList.className = 'entries-li';
+
   var $divRow = document.createElement('div');
   $divRow.setAttribute('class', 'div-row');
 
@@ -126,8 +147,10 @@ function renderEntry(entry) {
   $columnDom.append($h2AndIconDom, $pDom);
   $h2AndIconDom.append($h2Dom, $editIconDom);
   $divRow.append($columnImgDom, $columnDom);
+  $entryList.appendChild($divRow);
 
-  return $divRow;
+  $entryList.setAttribute('data-entry-id', entry.entryId);
+  return $entryList;
 }
 
 // function clickNavAndBtnHandler(event) {
@@ -172,7 +195,8 @@ window.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.entries.length; i++) {
     var entryDom = renderEntry(data.entries[i]);
 
-    $entriesLi.appendChild(entryDom);
+    // $entriesLi.appendChild(entryDom);
+    $entriesUl.appendChild(entryDom);
   }
 });
 
@@ -201,18 +225,21 @@ window.addEventListener('DOMContentLoaded', function (event) {
 // }
 
 function editEntry(event) {
-  if (event.target.matches('i')) {
-    viewEntryForm();
-
-    var entryLiElement = event.target.closest('li');
-    data.editing = entryLiElement;
-    var entryObj = getEntryObj(entryLiElement);
-
-    $entryTitle.value = entryObj.title;
-    $entryUrl.value = entryObj.url;
-    $placeholderImage.setAttribute('src', entryObj.$entryUrl);
-    $entryNotes.value = entryObj.notes;
+  if (event.target.tagName !== 'I') {
+    return;
   }
+  // if (event.target.matches('i')) {
+  viewEntryForm();
+
+  var entryLiElement = event.target.closest('li');
+  data.editing = entryLiElement;
+  var entryObj = getEntryObj(entryLiElement);
+
+  $entryTitle.value = entryObj.title;
+  $entryUrl.value = entryObj.url;
+  $placeholderImage.setAttribute('src', entryObj.$entryUrl);
+  $entryNotes.value = entryObj.notes;
+  // }
 }
 
 function getEntryObj(entryLiElement) {
@@ -220,25 +247,9 @@ function getEntryObj(entryLiElement) {
 
   for (var i = 0; i < data.entries.length; i++) {
     if (entryId === data.entries[i].entryId) {
-      var currentEntryObj = data.entries[i];
+      var entryObj = data.entries[i];
 
-      return currentEntryObj;
+      return entryObj;
     }
   }
-}
-
-var view = data.view;
-
-if (view === 'entries') {
-  // $mainContainer.className = 'main-container hidden';
-  // $entriesP.className = 'entries-p hidden';
-
-  // $entriesContainer.className = 'entries-container';
-  // $entriesUl.className = 'entries-ul';
-  viewEntries();
-} else if (view === 'entry-form') {
-  // $mainContainer.className = 'main-container';
-
-  // $entriesContainer.className = 'entries-container hidden';
-  viewEntryForm();
 }
