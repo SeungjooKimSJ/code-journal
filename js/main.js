@@ -112,6 +112,42 @@ function submitFormHandler(event) {
   $formNewEntry.reset();
 }
 
+// function submitFormHandler(event) {
+//   event.preventDefault();
+
+//   if (data.editing === null) {
+//     var entryObj = {
+//       title: $entryTitle.value,
+//       url: $entryUrl.value,
+//       notes: $entryNotes.value,
+//       entryId: data.nextEntryId
+//     };
+
+//     data.nextEntryId++;
+//     data.entries.unshift(entryObj);
+//     $entriesUl.prepend(renderEntry(entryObj));
+//   } else {
+//     for (var i = 0; i < data.entries.length; i++) {
+//       var currentId = data.editing.entryId;
+
+//       if (Number(data.entries[i].entryId) === Number(currentId)) {
+//         var currentEntryData = data.entries[i];
+//         currentEntryData.title = $formNewEntry.elements.title.value;
+//         currentEntryData.url = $formNewEntry.elements.url.value;
+//         currentEntryData.notes = $formNewEntry.elements.notes.value;
+//         currentEntryData.entryId = currentId;
+
+//         var entryLiElement = data.editing;
+//         entryLiElement[i].replaceWith(renderEntry(currentEntryData));
+//       }
+//     }
+//   }
+//   data.editing = null;
+//   // view = 'entries';
+//   $formNewEntry.reset();
+//   viewEntries();
+// }
+
 function renderEntry(entry) {
   var $entryList = document.createElement('li');
   $entryList.className = 'entries-li';
@@ -253,3 +289,26 @@ function getEntryObj(entryLiElement) {
     }
   }
 }
+
+// function editEntry(event) {
+//   if (event.target.tagName !== 'I') {
+//     return;
+//   }
+
+//   viewEntryForm();
+
+//   var entryLiElement = event.target.closest('li');
+//   data.editing = entryLiElement;
+//   var $entryId = entryLiElement.getAttribute('data-entry-id');
+
+//   for (var i = 0; i < data.entries.length; i++) {
+//     if (Number(data.entries[i].entryId) === Number($entryId)) {
+//       data.editing = data.entries[i];
+
+//       $formNewEntry.elements.title.value = data.editing.title;
+//       $formNewEntry.elements.url.value = data.editing.url;
+//       $formNewEntry.elements.notes.value = data.editing.notes;
+//       $placeholderImage.setAttribute('src', data.editing.url);
+//     }
+//   }
+// }
