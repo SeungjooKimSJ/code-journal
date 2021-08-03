@@ -110,6 +110,7 @@ function submitFormHandler(event) {
   }
   viewEntries();
   $formNewEntry.reset();
+  data.editing = null;
 }
 
 // function submitFormHandler(event) {
